@@ -2,6 +2,7 @@ package com.galvanize.tmo.paspringstarter;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -27,7 +28,7 @@ public class LibraryController {
 
         book.setAuthor(libraryRequest.getAuthor());
         book.setTitle(libraryRequest.getTitle());
-        book.setPublishedYear(libraryRequest.getPublishedYear());
+        book.setYearPublished(libraryRequest.getYearPublished());
         book.setId(bookList.size() + 1);
 
         bookList.add(book);

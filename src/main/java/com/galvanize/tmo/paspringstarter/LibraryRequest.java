@@ -4,12 +4,12 @@ public class LibraryRequest {
 
     private String author;
     private String title;
-    private Integer publishedYear;
+    private Integer yearPublished;
 
-    public LibraryRequest(String author, String title, Integer publishedYear) {
+    public LibraryRequest(String author, String title, Integer yearPublished) {
         this.author = author;
         this.title = title;
-        this.publishedYear = publishedYear;
+        this.yearPublished = yearPublished;
     }
 
     public String getAuthor() {
@@ -28,11 +28,11 @@ public class LibraryRequest {
         this.title = title;
     }
 
-    public Integer getPublishedYear() {
-        return publishedYear;
+    public Integer getYearPublished() {
+        return yearPublished;
     }
 
-    public void setPublishedYear(Integer publishedYear) {
-        this.publishedYear = publishedYear;
+    public void setYearPublished(Integer yearPublished) {
+        this.yearPublished = yearPublished;
     }
 }
