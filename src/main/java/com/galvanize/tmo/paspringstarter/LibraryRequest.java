@@ -1,0 +1,38 @@
+package com.galvanize.tmo.paspringstarter;
+
+public class LibraryRequest {
+
+    private String author;
+    private String title;
+    private Integer publishedYear;
+
+    public LibraryRequest(String author, String title, Integer publishedYear) {
+        this.author = author;
+        this.title = title;
+        this.publishedYear = publishedYear;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Integer getPublishedYear() {
+        return publishedYear;
+    }
+
+    public void setPublishedYear(Integer publishedYear) {
+        this.publishedYear = publishedYear;
+    }
+}
