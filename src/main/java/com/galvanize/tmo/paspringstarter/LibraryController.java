@@ -2,10 +2,7 @@ package com.galvanize.tmo.paspringstarter;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -35,11 +32,11 @@ public class LibraryController {
 
         bookList.add(book);
 
-        return new ResponseEntity<>(book, HttpStatus.OK);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
 
     @GetMapping("/api/books")
-    public ResponseEntity<List<Book>> getAllBooks() {
+    public ResponseEntity<LibraryResponse> getAllBooks() {
 
         Collections.sort(bookList, new Comparator<Book>() {
             @Override
@@ -67,6 +64,18 @@ public class LibraryController {
                 }
             }
         });
-        return new ResponseEntity<List<Book>>(bookList, HttpStatus.OK);
+
+        LibraryResponse response = new LibraryResponse();
+        response.setBooks(bookList);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/api/books")
+    public ResponseEntity deleteAllBooks() {
+
+        bookList.clear();
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+
     }
 }
